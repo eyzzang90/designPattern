@@ -1,12 +1,12 @@
-package decoratorPattern.simulator;
+package decoratorPattern.starbuzzCoffee.simulator;
 
-import decoratorPattern.Beverage;
-import decoratorPattern.DarkRoast;
-import decoratorPattern.Espresso;
-import decoratorPattern.HouseBlend;
-import decoratorPattern.decorator.Mocha;
-import decoratorPattern.decorator.Soy;
-import decoratorPattern.decorator.Whip;
+import decoratorPattern.starbuzzCoffee.Beverage;
+import decoratorPattern.starbuzzCoffee.DarkRoast;
+import decoratorPattern.starbuzzCoffee.Espresso;
+import decoratorPattern.starbuzzCoffee.HouseBlend;
+import decoratorPattern.starbuzzCoffee.decorator.Mocha;
+import decoratorPattern.starbuzzCoffee.decorator.Soy;
+import decoratorPattern.starbuzzCoffee.decorator.Whip;
 
 public class StarbuzzCoffee {
 
@@ -34,5 +34,11 @@ public class StarbuzzCoffee {
         beverage3 = new Mocha(beverage3);
         beverage3 = new Whip(beverage3);
         System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
+
+
+        Beverage beverage4 = new HouseBlend();
+        beverage4.setSize(Beverage.TALL);
+        beverage4 = new Whip(new Mocha(new Soy(beverage4)));
+        System.out.println(beverage4.getDescription() + " $" + beverage4.cost());
     }
 }

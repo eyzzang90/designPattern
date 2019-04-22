@@ -1,4 +1,4 @@
-package decoratorPattern;
+package decoratorPattern.starbuzzCoffee;
 
 public class HouseBlend extends Beverage {
 
