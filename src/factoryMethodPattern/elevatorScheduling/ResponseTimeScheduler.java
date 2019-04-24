@@ -15,6 +15,6 @@ public class ResponseTimeScheduler implements ElevatorScheduler{
 
     @Override
     public int selectElevator(ElevatorManager elevatorManager, int destination, Direction direction) {
-        return 1;
+        return 1;   // 임의로 선택함
     }
 }

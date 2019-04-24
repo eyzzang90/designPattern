@@ -1,5 +1,6 @@
 package factoryMethodPattern.elevatorScheduling;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -9,7 +10,9 @@ public class ElevatorManager {
     private SchedulingStrategyId strategyId;
 
     // 주어진 수만큼의 ElevatorController 를 생성한다.
-    public ElevatorManager(int controllerCount) {
+    public ElevatorManager(int controllerCount, SchedulingStrategyId strategyId) {
+        this.strategyId = strategyId;
+        controllers = new ArrayList<>(controllerCount);
         for(int i=0; i<controllerCount; i++){
             ElevatorController controller = new ElevatorController(i+1);
             controllers.add(controller);
